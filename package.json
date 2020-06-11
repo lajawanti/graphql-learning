@@ -4,6 +4,7 @@
   "description": "- GraphQL is a query language that provides an efficient, powerful and flexible approach to developing web APIs. It's a way to make query smarter.",
   "main": "index.js",
   "scripts": {
+    "start" : "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
