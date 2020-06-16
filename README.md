@@ -11,3 +11,13 @@ One of the most common problems with REST is that of over and under fetching of 
 - Schema – Describes the data
 - Resolvers – Logic for fetching data from different resources (microservices)
 - Query – Client asks for what data to be fetched
+
+#### Steps
+- npm init -y (This command will create package.json file)
+- npm install express express-graphql graphql graphql-tools mongoose nodemon
+    - Express is a fast and minimal web framework for Node.js.
+    - graphql is the JavaScript reference implementation for GraphQL.
+    - express-graphql is a package that allows you to create a GraphQL HTTP server with Express.
+    - graphql-tools is a package that allows us to build, mock, and stitch a GraphQL schema using the schema language.
+    - mongoose is an object modeling (ODM) tool that we'll use to connect to MongoDB.
+    - nodemon is a tool that listens for file changes in a Node app that automatically restarts the server.

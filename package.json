@@ -2,9 +2,9 @@
   "name": "graphql-learning",
   "version": "1.0.0",
   "description": "- GraphQL is a query language that provides an efficient, powerful and flexible approach to developing web APIs. It's a way to make query smarter.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start" : "node server.js",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
-    "graphql": "^15.1.0"
+    "graphql": "^15.1.0",
+    "graphql-tools": "^6.0.10",
+    "mongoose": "^5.9.19"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
