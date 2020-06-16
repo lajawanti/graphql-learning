@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const { GraphQLSchema, GraphQLObjectType, GraphQLInt, GraphQLString } = require('graphql');
+const { GraphQLSchema, GraphQLList, GraphQLObjectType, GraphQLInt, GraphQLString } = require('graphql');
 const graphqlHTTP = require('express-graphql');
 
 const port = process.env.PORT || 5000;
@@ -24,7 +24,19 @@ const UserType = new GraphQLObjectType({
         age : {type : GraphQLString}
     }
 });
-const schema = new GraphQLSchema({});
+
+const schema = new GraphQLSchema({
+    name: 'Query',
+    description: '...',
+    fields: () => ({
+        users: {
+            type: new GraphQLList(UserType),
+            resolve: (parent, args) => {
+                return users;
+            },
+        },
+    }),
+});
 
 
 app.get('/', (req, res) => {
