@@ -1,10 +1,31 @@
 const express = require('express');
 const app = express();
-const { GraphQLSchema } = require('graphql');
+const { GraphQLSchema, GraphQLObjectType, GraphQLInt, GraphQLString } = require('graphql');
 const graphqlHTTP = require('express-graphql');
-const schema = new GraphQLSchema();
 
 const port = process.env.PORT || 5000;
+
+// Temporary data 
+const users = [
+    {id: 1, name : "Tine", age: 40},
+    {id: 2, name : "Bob", age: 35},
+    {id: 3, name : "Himanshu", age: 30},
+    {id: 4, name : "Parth", age: 25},
+    {id: 5, name : "Sam", age: 22}
+];
+
+//Declare user type in detail
+const UserType = new GraphQLObjectType({
+    name: 'Users',
+    description: '....',
+    fields: {
+        id : {type : GraphQLInt},
+        name : {type : GraphQLString},
+        age : {type : GraphQLString}
+    }
+});
+const schema = new GraphQLSchema({});
+
 
 app.get('/', (req, res) => {
     res.send('SERVER  UP 👍')
